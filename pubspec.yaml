@@ -1,0 +1,59 @@
+name: gps_camera_app
+description: GPS Map Camera with Cloud Storage Integration
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Camera
+  camera: ^0.10.5+9
+  video_player: ^2.8.6
+
+  # Location & Maps
+  geolocator: ^11.0.0
+  geocoding: ^3.0.0
+  google_maps_flutter: ^2.6.0
+  flutter_map: ^6.1.0         # Fallback OSM map (no API key needed)
+  latlong2: ^0.9.0
+
+  # Image handling
+  image: ^4.1.7
+  image_gallery_saver: ^2.0.3
+  path_provider: ^2.1.3
+  path: ^1.9.0
+  exif: ^3.3.0
+
+  # Cloud Storage
+  google_sign_in: ^6.2.1
+  googleapis: ^12.0.0
+  googleapis_auth: ^1.5.1
+  http: ^1.2.1
+  url_launcher: ^6.2.5
+
+  # UI
+  permission_handler: ^11.3.1
+  intl: ^0.19.0
+  flutter_spinkit: ^5.2.1
+  share_plus: ^9.0.0
+  cupertino_icons: ^1.0.6
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  fluttertoast: ^8.2.8
+  font_awesome_flutter: ^10.7.0
+  lottie: ^3.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/animations/
