@@ -1,6 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
-import 'dart:ui' as ui;
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -172,14 +170,14 @@ class CameraService {
     // Draw text lines
     int yPos = barTop + 10;
     for (final line in lines) {
-  img.drawString(
+ img.drawString(
   image,
   line,
-  font: img.arial14,
+  font: img.arial24,
   x: 10,
   y: yPos,
   color: img.ColorRgb8(255, 255, 255),
-); 
+);
       yPos += 22;
     }
 

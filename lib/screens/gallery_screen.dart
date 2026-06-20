@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:share_plus/share_plus.dart';
 import '../models/media_item.dart';
 import '../services/camera_service.dart';
 import '../services/google_drive_service.dart';
