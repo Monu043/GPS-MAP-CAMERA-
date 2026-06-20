@@ -160,28 +160,26 @@ class CameraService {
     // Draw semi-transparent bar at bottom
     final barHeight = 22 * lines.length + 20;
     final barTop = image.height - barHeight;
-
-    for (int y = barTop; y < image.height; y++) {
-      for (int x = 0; x < image.width; x++) {
-        final pixel = image.getPixel(x, y);
-        final r = (img.getRed(pixel) * 0.3).round();
-        final g = (img.getGreen(pixel) * 0.3).round();
-        final b = (img.getBlue(pixel) * 0.3).round();
-        image.setPixel(x, y, img.getColor(r, g, b));
-      }
-    }
+    img.fillRect(
+    image,
+    x1: 0,
+    y1: barTop,
+    x2: image.width - 1,
+    y2: image.height - 1,
+    color: img.ColorRgba8(0, 0, 0, 128),
+  );
 
     // Draw text lines
     int yPos = barTop + 10;
     for (final line in lines) {
-      img.drawString(
-        image,
-        img.arial_14,
-        10,
-        yPos,
-        line,
-        color: img.getColor(255, 255, 255),
-      );
+  img.drawString(
+  image,
+  line,
+  font: img.arial14,
+  x: 10,
+  y: yPos,
+  color: img.ColorRgb8(255, 255, 255),
+); 
       yPos += 22;
     }
 

@@ -32,14 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           color: const Color(0xFF111111),
           border: Border(
-            top: BorderSide(color: Colors.white.withOpacity(0.08), width: 1),
+            top: BorderSide(color: Colors.white.withValues(alpha: 0.08), width: 1),
           ),
         ),
         child: NavigationBar(
           backgroundColor: Colors.transparent,
           selectedIndex: _selectedIndex,
           onDestinationSelected: (i) => setState(() => _selectedIndex = i),
-          indicatorColor: const Color(0xFF1A73E8).withOpacity(0.2),
+          indicatorColor: const Color(0xFF1A73E8).withValues(alpha: 0.2),
           destinations: const [
             NavigationDestination(
               icon: Icon(Icons.camera_alt_outlined),

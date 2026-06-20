@@ -125,7 +125,7 @@ class _SplashScreenState extends State<SplashScreen>
                     borderRadius: BorderRadius.circular(32),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF1A73E8).withOpacity(0.4),
+                        color: const Color(0xFF1A73E8).withValues(alpha: 0.4),
                         blurRadius: 30,
                         spreadRadius: 5,
                       ),
@@ -151,7 +151,7 @@ class _SplashScreenState extends State<SplashScreen>
                 Text(
                   'Capture • Locate • Store',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                     fontSize: 14,
                     letterSpacing: 2,
                   ),
@@ -162,7 +162,7 @@ class _SplashScreenState extends State<SplashScreen>
                   height: 48,
                   child: CircularProgressIndicator(
                     strokeWidth: 2,
-                    color: const Color(0xFF1A73E8).withOpacity(0.8),
+                    color: const Color(0xFF1A73E8).withValues(alpha: 0.8),
                   ),
                 ),
               ],

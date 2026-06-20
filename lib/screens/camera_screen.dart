@@ -235,7 +235,7 @@ class _CameraScreenState extends State<CameraScreen>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          color: Colors.red.withOpacity(0.85),
+                          color: Colors.red.withValues(alpha: 0.85),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Row(
@@ -292,7 +292,7 @@ class _CameraScreenState extends State<CameraScreen>
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                     colors: [
-                      Colors.black.withOpacity(0.9),
+                      Colors.black.withValues(alpha: 0.9),
                       Colors.transparent,
                     ],
                   ),
@@ -474,7 +474,7 @@ class _ModeButton extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
         decoration: BoxDecoration(
           color: selected
-              ? const Color(0xFF1A73E8).withOpacity(0.2)
+              ? const Color(0xFF1A73E8).withValues(alpha: 0.2)
               : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -510,7 +510,7 @@ class _GpsOverlay extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.65),
+        color: Colors.black.withValues(alpha: 0.65),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.white12),
       ),

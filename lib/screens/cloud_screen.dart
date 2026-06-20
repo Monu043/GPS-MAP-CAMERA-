@@ -54,10 +54,12 @@ class _CloudScreenState extends State<CloudScreen>
   Future<void> _loadDriveFiles() async {
     setState(() => _loadingDrive = true);
     final files = await _googleDrive.listFiles();
-    if (mounted) setState(() {
+    if (mounted) {
+      setState(() {
       _driveFiles = files;
       _loadingDrive = false;
     });
+    }
   }
 
   Future<void> _uploadAllToGoogleDrive() async {
@@ -231,12 +233,12 @@ class _GoogleDriveTab extends StatelessWidget {
                   child: Column(
                     children: [
                       Icon(Icons.folder_open,
-                          size: 48, color: Colors.white.withOpacity(0.2)),
+                          size: 48, color: Colors.white.withValues(alpha: 0.2)),
                       const SizedBox(height: 12),
                       Text(
                         'No files uploaded yet',
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.4)),
+                            color: Colors.white.withValues(alpha: 0.4)),
                       ),
                     ],
                   ),
@@ -279,10 +281,10 @@ class _OneDriveTab extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xFF0078D4).withOpacity(0.1),
+              color: const Color(0xFF0078D4).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                  color: const Color(0xFF0078D4).withOpacity(0.3)),
+                  color: const Color(0xFF0078D4).withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,7 +362,7 @@ class _CloudAccountCard extends StatelessWidget {
         color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isConnected ? color.withOpacity(0.5) : Colors.white12,
+          color: isConnected ? color.withValues(alpha: 0.5) : Colors.white12,
         ),
       ),
       child: Row(
@@ -369,7 +371,7 @@ class _CloudAccountCard extends StatelessWidget {
             width: 52,
             height: 52,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Icon(icon, color: color, size: 28),
@@ -392,7 +394,7 @@ class _CloudAccountCard extends StatelessWidget {
                 else
                   Text('Not connected',
                       style: TextStyle(
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withValues(alpha: 0.3),
                           fontSize: 12)),
               ],
             ),
@@ -401,7 +403,7 @@ class _CloudAccountCard extends StatelessWidget {
             onPressed: isConnected ? onDisconnect : onConnect,
             style: ElevatedButton.styleFrom(
               backgroundColor:
-                  isConnected ? Colors.red.withOpacity(0.2) : color,
+                  isConnected ? Colors.red.withValues(alpha: 0.2) : color,
               foregroundColor: isConnected ? Colors.red : Colors.white,
               elevation: 0,
               padding:
@@ -447,9 +449,9 @@ class _ActionCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Column(
           children: [
@@ -486,7 +488,7 @@ class _ActionCard extends StatelessWidget {
               const SizedBox(height: 12),
               LinearProgressIndicator(
                 value: progress,
-                backgroundColor: color.withOpacity(0.2),
+                backgroundColor: color.withValues(alpha: 0.2),
                 valueColor: AlwaysStoppedAnimation<Color>(color),
                 borderRadius: BorderRadius.circular(4),
               ),
@@ -520,7 +522,7 @@ class _DriveFileItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1A1A1A),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white.withOpacity(0.06)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
       ),
       child: Row(
         children: [
@@ -529,8 +531,8 @@ class _DriveFileItem extends StatelessWidget {
             height: 36,
             decoration: BoxDecoration(
               color: isImage
-                  ? const Color(0xFF1A73E8).withOpacity(0.15)
-                  : Colors.purple.withOpacity(0.15),
+                  ? const Color(0xFF1A73E8).withValues(alpha: 0.15)
+                  : Colors.purple.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(

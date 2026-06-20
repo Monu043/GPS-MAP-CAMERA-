@@ -18,7 +18,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   final GoogleDriveService _driveService = GoogleDriveService();
   List<MediaItem> _items = [];
   bool _loading = true;
-  Set<String> _selectedIds = {};
+  final Set<String> _selectedIds = {};
   bool _selectionMode = false;
 
   @override
@@ -30,10 +30,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Future<void> _loadMedia() async {
     setState(() => _loading = true);
     final items = await _cameraService.loadSavedMedia();
-    if (mounted) setState(() {
+    if (mounted) {
+      setState(() {
       _items = items;
       _loading = false;
     });
+    }
   }
 
   void _toggleSelect(String id) {
@@ -204,7 +206,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                               AnimatedContainer(
                                 duration: const Duration(milliseconds: 150),
                                 color: isSelected
-                                    ? const Color(0xFF1A73E8).withOpacity(0.4)
+                                    ? const Color(0xFF1A73E8).withValues(alpha: 0.4)
                                     : Colors.transparent,
                               ),
                             if (isSelected)
@@ -257,19 +259,19 @@ class _EmptyState extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.photo_library_outlined,
-              size: 80, color: Colors.white.withOpacity(0.2)),
+              size: 80, color: Colors.white.withValues(alpha: 0.2)),
           const SizedBox(height: 16),
           Text(
             'No media yet',
             style: TextStyle(
-                color: Colors.white.withOpacity(0.5), fontSize: 16),
+                color: Colors.white.withValues(alpha: 0.5), fontSize: 16),
           ),
           const SizedBox(height: 8),
           Text(
             'Capture photos or videos with\nthe GPS camera',
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.white.withOpacity(0.3), fontSize: 13),
+                color: Colors.white.withValues(alpha: 0.3), fontSize: 13),
           ),
           const SizedBox(height: 24),
           OutlinedButton.icon(

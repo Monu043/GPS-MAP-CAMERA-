@@ -117,7 +117,7 @@ class _MapScreenState extends State<MapScreen> {
                                 boxShadow: [
                                   BoxShadow(
                                     color: const Color(0xFF1A73E8)
-                                        .withOpacity(0.4),
+                                        .withValues(alpha: 0.4),
                                     blurRadius: 10,
                                     spreadRadius: 3,
                                   ),
@@ -156,7 +156,7 @@ class _MapScreenState extends State<MapScreen> {
                                     color: Colors.white, width: 2),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.3),
+                                    color: Colors.black.withValues(alpha: 0.3),
                                     blurRadius: 6,
                                     offset: const Offset(0, 2),
                                   ),
@@ -221,7 +221,7 @@ class _MapScreenState extends State<MapScreen> {
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.75),
+                      color: Colors.black.withValues(alpha: 0.75),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Column(
@@ -236,8 +236,8 @@ class _MapScreenState extends State<MapScreen> {
                             color: Colors.purple,
                             label: 'Videos (${_mediaItems.where((i) => i.type == MediaType.video).length})'),
                         const SizedBox(height: 4),
-                        _LegendItem(
-                            color: const Color(0xFF1A73E8),
+                        const _LegendItem(
+                            color: Color(0xFF1A73E8),
                             isCircle: true,
                             label: 'You'),
                       ],
@@ -298,7 +298,7 @@ class _MediaInfoCard extends StatelessWidget {
         border: Border.all(color: Colors.white12),
         boxShadow: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               blurRadius: 20,
               offset: const Offset(0, 4)),
         ],
